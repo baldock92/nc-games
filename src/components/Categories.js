@@ -1,14 +1,4 @@
-import { useState, useEffect } from "react";
-import { getCategories } from "../utils/api";
-import "../styles/Categories.css";
 
-import { Link } from "react-router-dom";
-
-const linkStyle = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: "white",
-};
 
 const Categories = () => {
   const [allCategories, setAllCategories] = useState([]);

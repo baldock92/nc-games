@@ -1,14 +1,5 @@
-import { useState, useEffect } from "react";
-import { getCategories } from "../utils/api";
-import "../styles/Categories.css";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
-
-const linkStyle = {
-  margin: "1rem",
-  textDecoration: "none",
-  color: "white",
-};
 
 const Navbar = () => {
   const [allCategories, setAllCategories] = useState([]);
@@ -28,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar__wrapper">
-      <Link to="/">
+      <Link to="reviews">
         <input type="button" className="navbar__button" value="Home" />
       </Link>
       <Link to="/reviews">
