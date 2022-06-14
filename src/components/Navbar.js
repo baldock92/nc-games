@@ -1,5 +1,14 @@
+import { useState, useEffect } from "react";
+import { getCategories } from "../utils/api";
+import "../styles/Categories.css";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
+
+const linkStyle = {
+  margin: "1rem",
+  textDecoration: "none",
+  color: "white",
+};
 
 const Navbar = () => {
   const [allCategories, setAllCategories] = useState([]);
@@ -19,17 +28,15 @@ const Navbar = () => {
 
   return (
     <div className="navbar__wrapper">
-      <Link to="reviews">
+      <Link to="/">
         <input type="button" className="navbar__button" value="Home" />
       </Link>
       <Link to="/reviews">
         <input type="button" className="navbar__button" value="Reviews" />
       </Link>
       <span className="dropdown">
-        <input id="check01" type="checkbox" name="menu" />
-        <label className="navbar__button" htmlFor="check01">
-          Categories
-        </label>
+      <input id="check01" type="checkbox" name="menu" />
+        <label className="navbar__button" htmlFor="check01">Categories</label>
         <ul className="dropdown-content">
           {allCategories.map((category) => {
             return (
