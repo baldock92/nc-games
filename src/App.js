@@ -3,8 +3,8 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Reviews from "./components/Reviews";
-import Home from "./components/Home";
-import Categories from "./components/Categories";
+//import Home from "./components/Home";
+//import Categories from "./components/Categories";
 
 import { Routes, Route } from "react-router-dom";
 
