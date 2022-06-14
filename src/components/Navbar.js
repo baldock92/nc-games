@@ -2,13 +2,51 @@ import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
 const Navbar = () => {
+  const [allCategories, setAllCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    getCategories().then((categories) => {
+      setAllCategories(categories);
+      setLoading(false);
+    });
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="navbar__wrapper">
       <Link to="reviews">
         <input type="button" className="navbar__button" value="Home" />
       </Link>
-      <input type="button" className="navbar__button" value="Reviews" />
-      <input type="button" className="navbar__button" value="Categories" />
+      <Link to="/reviews">
+        <input type="button" className="navbar__button" value="Reviews" />
+      </Link>
+      <span className="dropdown">
+        <input id="check01" type="checkbox" name="menu" />
+        <label className="navbar__button" htmlFor="check01">
+          Categories
+        </label>
+        <ul className="dropdown-content">
+          {allCategories.map((category) => {
+            return (
+              <li key={category.slug}>
+                <label htmlFor="check01">
+                  <Link style={linkStyle} to={`/reviews/${category.slug}`}>
+                    {category.slug}
+                  </Link>
+                </label>
+              </li>
+            );
+          })}
+        </ul>
+        <Link to="/categories">
+          <input type="button" className="navbar__button" value="Categories" />
+        </Link>
+      </span>
     </div>
   );
 };
