@@ -22,6 +22,10 @@ const Navbar = () => {
     });
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="navbar__wrapper">
       <Link to="/">
@@ -31,8 +35,10 @@ const Navbar = () => {
         <input type="button" className="navbar__button" value="Reviews" />
       </Link>
       <span className="dropdown">
-      <input id="check01" type="checkbox" name="menu" />
-        <label className="navbar__button" htmlFor="check01">Categories</label>
+        <input id="check01" type="checkbox" name="menu" />
+        <label className="navbar__button" htmlFor="check01">
+          Categories
+        </label>
         <ul className="dropdown-content">
           {allCategories.map((category) => {
             return (
