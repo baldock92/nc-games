@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  background-color: #eff3f6;
+}
+
+.banner-top {
+  background-color: #393d71;
+  color: white;
+}
