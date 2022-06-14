@@ -1,0 +1,88 @@
+.categories__all {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.category__card {
+    align-items: center;
+    position: relative;
+    display: grid;
+    /* grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 30% auto;
+    grid-template-areas: "image title" "image category" "image review_id"; */
+    margin: 3%;
+    background-color: #ffffff;
+    color: #393d71;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    min-height: 20%;
+    max-width: 70%;
+    padding: 3%;
+}
+
+.category__title{
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #4caf4fc0;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content li {
+    color: black;
+    padding: 12px 0px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content li:hover {
+    background-color: #4caf4f;
+  }
+  
+  .dropdown input,
+  ul.submenu {
+    display: none;
+  }
+  
+  .dropdown label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .dropdown input:checked ~ ul.dropdown-content {
+    display: block;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .link{
+    color: black;
+    text-decoration: none;
+  }
