@@ -14,6 +14,8 @@ const Categories = () => {
   const [allCategories, setAllCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  console.log("helloooooooooo");
+
   useEffect(() => {
     setLoading(true);
     getCategories().then((categories) => {
