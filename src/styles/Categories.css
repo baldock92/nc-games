@@ -27,7 +27,7 @@
 .dropdown {
     position: relative;
     display: inline-block;
-    border: black solid 1px;
+    /* border: black solid 1px; */
   }
   
   .dropbtn {
@@ -43,7 +43,7 @@
     display: none;
     position: absolute;
     left: 0;
-    background-color: #4caf4fc0;
+    background-color: #4cafa2bb;
     color: black;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -58,7 +58,7 @@
   }
   
   .dropdown-content li:hover {
-    background-color: #2d8a30;
+    background-color: #c2c525d0;
   }
   
   .dropdown input,

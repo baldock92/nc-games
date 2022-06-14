@@ -34,10 +34,6 @@ const Categories = () => {
           Click here to see reviews for a specific category
         </label>
         <ul className="dropdown-content">
-          {/* <li><label htmlFor="check01">
-          <Link style={linkStyle} to="/strategy">Strategy</Link>
-          </label>
-        </li> */}
           {allCategories.map((category) => {
             return (
               <li key={category.slug}>
