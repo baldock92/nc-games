@@ -40,7 +40,7 @@ const Categories = () => {
         </li> */}
           {allCategories.map((category) => {
             return (
-              <li>
+              <li key={category.slug}>
                 <label htmlFor="check01">
                   <Link style={linkStyle} to={`/reviews/${category.slug}`}>
                     {category.slug}
