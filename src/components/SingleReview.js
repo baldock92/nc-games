@@ -36,7 +36,7 @@ const SingleReview = () => {
       <li className="singleReview__createdAt">Review written: {review.created_at}</li>
       <li className="singleReview__votes">Number of upvotes : {review.votes}</li>
       <li className="singleReview__comments">Number of comments: {review.comment_count}</li>
-      <Votes votes={review.votes} review_id={review.review_id}/>
+      <Votes votes={review.votes} review_id={review.review_id} setReview={setReview} />
     </div>
   );
 };

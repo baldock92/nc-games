@@ -2,20 +2,42 @@ import { useState } from "react";
 import { patchVotes } from "../utils/api";
 import "../styles/Votes.css";
 
-const Votes = ({ review_id, votes }) => {
+const Votes = ({ review_id, votes, setReview }) => {
   const [voteChange, setVoteChange] = useState(0);
 
   const handleUpClick = () => {
     setVoteChange((currVotes) => currVotes + 1);
-    patchVotes(review_id, 1).catch(() => {
+    setReview((currReview) => {
+      let copyReview = { ...currReview };
+      copyReview.votes += 1;
+      return copyReview;
+    });
+    patchVotes(review_id, 1)
+    .catch(() => {
       setVoteChange((currVotes) => currVotes - 1);
+      setReview((currReview) => {
+        let copyReview = { ...currReview };
+        copyReview.votes -= 1;
+        return copyReview;
+      });
     });
   };
 
   const handleDownClick = () => {
     setVoteChange((currVotes) => currVotes - 1);
-    patchVotes(review_id, -1).catch(() => {
+    setReview((currReview) => {
+      let copyReview = { ...currReview };
+      copyReview.votes -= 1;
+      return copyReview;
+    });
+    patchVotes(review_id, -1)
+    .catch(() => {
       setVoteChange((currVotes) => currVotes + 1);
+      setReview((currReview) => {
+        let copyReview = { ...currReview };
+        copyReview.votes += 1;
+        return copyReview;
+      });
     });
   };
 
