@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Reviews from "./components/Reviews";
 import Categories from "./components/Categories";
 import Home from "./components/Home";
+import SingleReview from "./components/SingleReview";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/:category" element={<Reviews />} />
+        <Route path="/singlereview/:review_id" element={<SingleReview />} />
       </Routes>
     </div>
   );

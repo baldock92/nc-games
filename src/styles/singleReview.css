@@ -1,0 +1,25 @@
+.singleReview__title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 2rem;
+    background-color: #4cafa2a8;
+    padding: 0.5rem 0rem;
+}
+.singleReview__category{
+    font-size: 1 rem;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+.singleReview__image{
+    max-height: auto;
+    max-width: 30%;
+}
+
+.singleReview__author{
+    text-decoration: underline;
+}
+
+li {
+    margin: 1rem 2rem;
+}
