@@ -1,0 +1,24 @@
+.upvote__button {
+  background-color: #40af44;
+  border: black 1px solid;
+  color: white;
+  padding: 3%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.downvote__button {
+  background-color: #f50a0a; 
+  border: black 1px solid;
+  color: white;
+  padding: 3%;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+:disabled {
+    background-color: rgba(165, 37, 37, 0.466);
+  }
+  
