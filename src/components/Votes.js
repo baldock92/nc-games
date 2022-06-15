@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { patchVotes } from "../utils/api";
 import "../styles/Votes.css";
 
@@ -7,14 +7,16 @@ const Votes = ({ review_id, votes }) => {
 
   const handleUpClick = () => {
     setVoteChange((currVotes) => currVotes + 1);
-    patchVotes(review_id, 1).catch((err) => {
-      console.log(err);
+    patchVotes(review_id, 1).catch(() => {
+      setVoteChange((currVotes) => currVotes - 1);
     });
   };
 
   const handleDownClick = () => {
     setVoteChange((currVotes) => currVotes - 1);
-    patchVotes(review_id, -1).catch((err) => console.log(err));
+    patchVotes(review_id, -1).catch(() => {
+      setVoteChange((currVotes) => currVotes + 1);
+    });
   };
 
   return (
