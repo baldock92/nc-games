@@ -42,16 +42,16 @@ const Votes = ({ review_id, votes, setReview }) => {
   };
 
   return (
-    <div class="votes__button-wrapper">
+    <div className="votes__button-wrapper">
       <button
-        class="upvote__button"
+        className="upvote__button"
         onClick={handleUpClick}
         disabled={voteChange > 0}
       >
         👍
       </button>
       <button
-        class="downvote__button"
+        className="downvote__button"
         onClick={handleDownClick}
         disabled={voteChange < 0}
       >
