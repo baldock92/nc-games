@@ -36,7 +36,18 @@ export const patchVotes = (review_id, votes) => {
   return gamesApi
     .patch(`/reviews/${review_id}`, { inc_votes: votes })
     .then(({ data }) => {
-      return data.updatedReview
+      return data.updatedReview;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const getComments = (review_id) => {
+  return gamesApi
+    .get(`/reviews/${review_id}/comments`)
+    .then(({ data }) => {
+      return data.comments;
     })
     .catch((err) => {
       console.log(err);

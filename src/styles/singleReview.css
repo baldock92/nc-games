@@ -22,4 +22,6 @@
 
 li {
     margin: 1rem 2rem;
+}.singleReview__comments{
+    text-decoration: underline;
 }
