@@ -15,3 +15,7 @@
     width: 60%;
     
 }
+
+:disabled {
+  background-color: rgba(165, 37, 37, 0.466);
+}

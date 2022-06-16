@@ -5,10 +5,12 @@ import "../styles/addComments.css";
 const AddComment = ({ review_id }) => {
   const [commentBody, setCommentBody] = useState("");
   const [posted, setPosted] = useState(false);
+  const [submitOnce, setSubmitOnce] = useState(false);
 
   const handleSubmitComment = (event) => {
     event.preventDefault();
     setPosted(true);
+    setSubmitOnce(true);
   };
 
   useEffect(() => {
@@ -19,8 +21,8 @@ const AddComment = ({ review_id }) => {
 
     if (posted) {
       postComment(review_id, commentToAdd)
-        .then((newComment) => {
-          alert("Comment successfully added!");
+        .then(() => {
+          alert("Comment successfully added! Refresh to see your comment");
         })
         .then(() => {
           setCommentBody("");
@@ -51,6 +53,7 @@ const AddComment = ({ review_id }) => {
           type="submit"
           value="Submit"
           className="AddComment__submitButton"
+          disabled={submitOnce}
         ></input>
       </form>
     </div>
