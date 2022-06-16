@@ -54,7 +54,9 @@ const Comments = ({ review_id }) => {
                   <li className="comment__body">"{comment.body}"</li>
                   
                   <li className="comment__created_at">
-                    Comment made at: {comment.created_at}
+                    Date: {comment.created_at.slice(0,10)}
+                    <br />
+                    Time: {comment.created_at.slice(11,19)}
                   </li>
                 </div>
               );
