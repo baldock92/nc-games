@@ -1,0 +1,21 @@
+.AddComment__submitButton {
+  background-color: #40af44;
+  margin: 1rem;
+  padding: 0.3rem;
+  color: white;
+}
+
+.AddComment__form{
+    background-color: #393d71;
+    margin: 2% 10%;
+}
+
+.AddComment__input {
+    margin-top:3%;
+    width: 60%;
+    
+}
+
+:disabled {
+  background-color: rgba(165, 37, 37, 0.466);
+}
