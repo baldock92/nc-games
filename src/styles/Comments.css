@@ -1,3 +1,46 @@
 .comment__card {
-    background-color: red;
+  align-items: center;
+  position: relative;
+  margin: 1rem;
+  background-color: #ffffff;
+  color: #393d71;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.comments__all {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comments__Button {
+  margin: 2% 5%;
+  background-color: #812fc4d0;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#comments__expandButton {
+  background-color: #40af44;
+}
+
+#comments__hideButton {
+  background-color: red;
+}
+
+.comment__author {
+  text-decoration: underline;
+}
+
+.comment__body {
+  font-size: 1.2rem;
+  background-color: rgba(236, 240, 9, 0.521);
 }

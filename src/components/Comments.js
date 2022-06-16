@@ -2,9 +2,14 @@ import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import "../styles/Comments.css";
 
-const Comments = ({review_id}) => {
+const Comments = ({ review_id }) => {
   const [allComments, setAllComments] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [moreComments, setMoreComments] = useState(false);
+
+  const handleMoreCommentClick = () => {
+    moreComments === true ? setMoreComments(false) : setMoreComments(true);
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -21,14 +26,41 @@ const Comments = ({review_id}) => {
 
   return (
     <div>
-      <ul className="allComments">
-        {allComments.map((comment) => {
-          return <div className="comment__card" key={comment.comment_id}>
-            <li className="comment__body">Comment: {comment.body}</li>
-            <li className="comment__author">Author: {comment.author}</li>
-            <li className="comment__created_at">Comment made at: {comment.created_at}</li>
-          </div>;
-        })}
+      
+      <ul className="comments__all">
+        {moreComments === false ? (
+          <>
+            <button
+              className="comments__Button"
+              id="comments__expandButton"
+              onClick={handleMoreCommentClick}
+            >
+              Show comments ➕
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className="comments__Button"
+              id="comments__hideButton"
+              onClick={handleMoreCommentClick}
+            >
+              Hide comments ➖
+            </button>
+            {allComments.map((comment) => {
+              return (
+                <div className="comment__card" key={comment.comment_id}>
+                  <li className="comment__author">Author: {comment.author}</li>
+                  <li className="comment__body">"{comment.body}"</li>
+                  
+                  <li className="comment__created_at">
+                    Comment made at: {comment.created_at}
+                  </li>
+                </div>
+              );
+            })}
+          </>
+        )}
       </ul>
     </div>
   );
