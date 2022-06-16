@@ -12,7 +12,6 @@ const Comments = ({ review_id }) => {
   };
 
   useEffect(() => {
-    setLoading(true);
 
     getComments(review_id).then((commentsFromApi) => {
       setAllComments(commentsFromApi);

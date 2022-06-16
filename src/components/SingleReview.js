@@ -12,7 +12,6 @@ const SingleReview = () => {
   const { review_id } = useParams();
 
   useEffect(() => {
-    setLoading(true);
 
     getReviewById(review_id).then((reviewFromApi) => {
       setReview(reviewFromApi);
