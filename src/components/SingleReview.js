@@ -36,7 +36,10 @@ const SingleReview = () => {
       <ul className="singleReview__author">Review by {review.owner}</ul>
       <li className="singleReview__body">{review.review_body}</li>
       <li className="singleReview__createdAt">
-        Review written: {review.created_at}
+        
+        Review date: {review.created_at.slice(0,10)}
+                    <br />
+                    Review Time: {review.created_at.slice(11,19)}
       </li>
       <li className="singleReview__votes">
         Number of upvotes : {review.votes}
