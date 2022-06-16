@@ -53,3 +53,14 @@ export const getComments = (review_id) => {
       console.log(err);
     });
 };
+
+export const postComment = (review_id, newComment) => {
+  return gamesApi
+    .post(`/reviews/${review_id}/comments`, newComment)
+    .then(({ data }) => {
+      return data.comment;
+    })
+    .catch((err) => {
+      console.log(err, "<<<<<< ERR IN API");
+    });
+};

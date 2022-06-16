@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import "../styles/Comments.css";
+import AddComment from "./AddComment";
 
 const Comments = ({ review_id }) => {
   const [allComments, setAllComments] = useState([]);
@@ -17,7 +18,7 @@ const Comments = ({ review_id }) => {
       setAllComments(commentsFromApi);
       setLoading(false);
     });
-  }, [review_id]);
+  }, [review_id, allComments]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -25,7 +26,7 @@ const Comments = ({ review_id }) => {
 
   return (
     <div>
-      
+      <AddComment review_id={review_id} />
       <ul className="comments__all">
         {moreComments === false ? (
           <>

@@ -55,6 +55,7 @@ const SingleReview = () => {
         Comments: {review.comment_count}
       </li>
       <Comments review_id={review.review_id} />
+      
     </div>
   );
 };
