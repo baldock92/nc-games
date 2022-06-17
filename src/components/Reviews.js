@@ -3,14 +3,14 @@ import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import "../styles/reviews.css";
 import { Link } from "react-router-dom";
+import SortBy from "./SortBy";
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const { category } = useParams();
 
-  useEffect(() => {
+   useEffect(() => {
     setLoading(true);
 
     getReviews(category).then((reviews) => {
@@ -25,6 +25,7 @@ const Reviews = () => {
 
   return (
     <div className="reviews__all">
+      <SortBy setAllReviews={setAllReviews} allReviews={allReviews} />
       {allReviews.map((review) => {
         return (
           <Link to={`/singlereview/${review.review_id}`} key={review.review_id}>
