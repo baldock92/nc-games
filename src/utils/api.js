@@ -64,3 +64,15 @@ export const postComment = (review_id, newComment) => {
       console.log(err, "<<<<<< ERR IN API");
     });
 };
+
+export const deleteComment = (comment_id) => {
+  console.log(comment_id)
+  return gamesApi
+    .delete(`comments/${comment_id}`)
+    .then((data) => {
+      return data.status;
+    })
+    .catch((err) => {
+      console.log(err.response.data, "<<< ERROR IN API <<<<<");
+    });
+};

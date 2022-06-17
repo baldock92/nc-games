@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getComments } from "../utils/api";
 import "../styles/Comments.css";
 import AddComment from "./AddComment";
+import Delete from "./Delete";
 
 const Comments = ({ review_id }) => {
   const [allComments, setAllComments] = useState([]);
@@ -13,7 +14,6 @@ const Comments = ({ review_id }) => {
   };
 
   useEffect(() => {
-
     getComments(review_id).then((commentsFromApi) => {
       setAllComments(commentsFromApi);
       setLoading(false);
@@ -52,12 +52,15 @@ const Comments = ({ review_id }) => {
                 <div className="comment__card" key={comment.comment_id}>
                   <li className="comment__author">Author: {comment.author}</li>
                   <li className="comment__body">"{comment.body}"</li>
-                  
+
                   <li className="comment__created_at">
-                    Date: {comment.created_at.slice(0,10)}
+                    Date: {comment.created_at.slice(0, 10)}
                     <br />
-                    Time: {comment.created_at.slice(11,19)}
+                    Time: {comment.created_at.slice(11, 19)}
                   </li>
+                  <div>
+                    <Delete comment={comment} />
+                  </div>
                 </div>
               );
             })}
