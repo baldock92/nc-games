@@ -1,0 +1,21 @@
+.Home__img {
+  border-radius: 20%;
+  width: 20px;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.Home__header {
+  color: white;
+  padding: 0.7rem;
+  background-color: blueviolet;
+}
+
+.Home__title {
+  padding: 0.7rem;
+}
+
+.Home__user {
+  background-color: #dfe21bd0;
+  padding: 3px;
+}
