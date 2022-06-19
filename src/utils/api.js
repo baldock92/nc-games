@@ -10,9 +10,9 @@ export const getReviews = (category) => {
     .then(({ data }) => {
       return data.reviews;
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    // .catch((err) => {
+    //   console.log(err);
+    // });
 };
 
 export const getCategories = () => {
@@ -22,14 +22,9 @@ export const getCategories = () => {
 };
 
 export const getReviewById = (review_id) => {
-  return gamesApi
-    .get(`/reviews/${review_id}`)
-    .then(({ data }) => {
-      return data.review;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return gamesApi.get(`/reviews/${review_id}`).then(({ data }) => {
+    return data.review;
+  });
 };
 
 export const patchVotes = (review_id, votes) => {
@@ -66,7 +61,7 @@ export const postComment = (review_id, newComment) => {
 };
 
 export const deleteComment = (comment_id) => {
-  console.log(comment_id)
+  console.log(comment_id);
   return gamesApi
     .delete(`comments/${comment_id}`)
     .then((data) => {

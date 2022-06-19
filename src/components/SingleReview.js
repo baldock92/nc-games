@@ -8,16 +8,28 @@ import Comments from "./Comments";
 const SingleReview = () => {
   const [review, setReview] = useState({});
   const [loading, setLoading] = useState(true);
+  const [isError, setIsError] = useState(null);
 
   const { review_id } = useParams();
 
   useEffect(() => {
-
-    getReviewById(review_id).then((reviewFromApi) => {
-      setReview(reviewFromApi);
-      setLoading(false);
-    });
+    getReviewById(review_id)
+      .then((reviewFromApi) => {
+        setReview(reviewFromApi);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setIsError(err.response.data);
+      });
   }, [review_id]);
+
+  if (isError) {
+    return (
+      <div className="Error__page">
+        <h2 className="error">An error occurred.</h2>
+      </div>
+    );
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,10 +47,9 @@ const SingleReview = () => {
       <ul className="singleReview__author">Review by {review.owner}</ul>
       <li className="singleReview__body">{review.review_body}</li>
       <li className="singleReview__createdAt">
-        
-        Review date: {review.created_at.slice(0,10)}
-                    <br />
-                    Review Time: {review.created_at.slice(11,19)}
+        Review date: {review.created_at.slice(0, 10)}
+        <br />
+        Review Time: {review.created_at.slice(11, 19)}
       </li>
       <li className="singleReview__votes">
         Number of upvotes : {review.votes}
@@ -55,7 +66,6 @@ const SingleReview = () => {
         Comments: {review.comment_count}
       </li>
       <Comments review_id={review.review_id} />
-      
     </div>
   );
 };

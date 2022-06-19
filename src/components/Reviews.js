@@ -9,15 +9,28 @@ const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const { category } = useParams();
+  const [isError, setIsError] = useState(null);
 
-   useEffect(() => {
+  useEffect(() => {
     setLoading(true);
 
-    getReviews(category).then((reviews) => {
-      setAllReviews(reviews);
-      setLoading(false);
-    });
+    getReviews(category)
+      .then((reviews) => {
+        setAllReviews(reviews);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setIsError(err.response.data);
+      });
   }, [category]);
+
+  if (isError) {
+    return (
+      <div className="Error__page">
+        <h2 className="error">An error occurred.</h2>
+      </div>
+    );
+  }
 
   if (loading) {
     return <div>Loading...</div>;
