@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { deleteComment } from "../utils/api";
+import "../styles/Delete.css";
 
 const Delete = ({ comment }) => {
   const [confirmDelete, setConfirmDelete] = useState(false);

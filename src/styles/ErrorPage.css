@@ -1,0 +1,12 @@
+.ErrorPage__header {
+  background-color: rgba(202, 19, 50, 0.938);
+  color: white;
+  padding: 2%;
+  margin: 3% 0%;
+}
+
+img {
+  height:auto;
+  min-width: 80%;
+  max-width: auto;
+}

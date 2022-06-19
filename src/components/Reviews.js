@@ -4,20 +4,30 @@ import { getReviews } from "../utils/api";
 import "../styles/reviews.css";
 import { Link } from "react-router-dom";
 import SortBy from "./SortBy";
+import ErrorPage from "./ErrorPage";
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const { category } = useParams();
+  const [isError, setIsError] = useState(null);
 
-   useEffect(() => {
+  useEffect(() => {
     setLoading(true);
 
-    getReviews(category).then((reviews) => {
-      setAllReviews(reviews);
-      setLoading(false);
-    });
+    getReviews(category)
+      .then((reviews) => {
+        setAllReviews(reviews);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setIsError(err.response);
+      });
   }, [category]);
+
+  if (isError) {
+    return <ErrorPage errorMessage={isError} />;
+  }
 
   if (loading) {
     return <div>Loading...</div>;

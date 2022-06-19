@@ -44,25 +44,4 @@
   background-color: rgba(236, 240, 9, 0.521);
 }
 
-.Comments__delete-button {
-  background-color: red;
-  color: white;
-  margin: 2% 5%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
 
-.Delete__yesButton {
-  background-color: #40af44;
-  margin: 2%;
-  padding: 2%;
-  cursor: pointer;
-}
-
-.Delete__noButton {
-  background-color: white;
-  margin: 2%;
-  padding: 2%;
-  cursor: pointer;
-}
