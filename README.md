@@ -15,11 +15,11 @@ These reviews can be sorted by date, comment count or number of votes, and toggl
 You can also view reviews for each game category.
 Each individual game review can be accessed by clicking on the relevant board game card, which will give more information to the user about that review. Each review can be up or down voted once only.
 A comment can also be left on each review, and there is the option to delete your own comment if you wish.
-
+Various error handling has been added, including for reviews which don't exist, or if you try to post a comment without the required fields.
 
 ## Node requirements
 
-To run this app locally, you must ensure your node version is a minimum of v17.7.1
+To run this app locally, you must ensure your node version is 17.7.1 or higher.
 
 ## How to run this app locally
 
