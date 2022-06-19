@@ -4,6 +4,7 @@ import { getReviewById } from "../utils/api";
 import "../styles/singleReview.css";
 import Votes from "./Votes";
 import Comments from "./Comments";
+import ErrorPage from "./ErrorPage";
 
 const SingleReview = () => {
   const [review, setReview] = useState({});
@@ -19,16 +20,12 @@ const SingleReview = () => {
         setLoading(false);
       })
       .catch((err) => {
-        setIsError(err.response.data);
+        setIsError(err.response);
       });
   }, [review_id]);
 
   if (isError) {
-    return (
-      <div className="Error__page">
-        <h2 className="error">An error occurred.</h2>
-      </div>
-    );
+    return <ErrorPage errorMessage={isError} />;
   }
 
   if (loading) {

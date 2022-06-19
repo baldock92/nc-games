@@ -6,6 +6,7 @@ import Reviews from "./components/Reviews";
 import Categories from "./components/Categories";
 import Home from "./components/Home";
 import SingleReview from "./components/SingleReview";
+import ErrorPage from "./components/ErrorPage"
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/:category" element={<Reviews />} />
         <Route path="/singlereview/:review_id" element={<SingleReview />} />
+        <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </div>
   );

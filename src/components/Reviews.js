@@ -4,6 +4,7 @@ import { getReviews } from "../utils/api";
 import "../styles/reviews.css";
 import { Link } from "react-router-dom";
 import SortBy from "./SortBy";
+import ErrorPage from "./ErrorPage";
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
@@ -20,16 +21,12 @@ const Reviews = () => {
         setLoading(false);
       })
       .catch((err) => {
-        setIsError(err.response.data);
+        setIsError(err.response);
       });
   }, [category]);
 
   if (isError) {
-    return (
-      <div className="Error__page">
-        <h2 className="error">An error occurred.</h2>
-      </div>
-    );
+    return <ErrorPage errorMessage={isError} />;
   }
 
   if (loading) {

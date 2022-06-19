@@ -10,9 +10,6 @@ export const getReviews = (category) => {
     .then(({ data }) => {
       return data.reviews;
     })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
 };
 
 export const getCategories = () => {
