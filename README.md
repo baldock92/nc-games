@@ -4,9 +4,11 @@ This app was put together during the frontend project phase during my times at N
 
 ## Links
 
-The link to the hosted version of this app is: https://baldock92-board-games.netlify.app/
+The hosted version of this app is: https://baldock92-board-games.netlify.app/
 
-The link to the Github repo for the backend of this app is: https://github.com/baldock92/backend-project--nc-games
+The Github repo for the backend of this app is: https://github.com/baldock92/backend-project--nc-games
+
+The hosted version of the backend for this app is : https://my-ncgame.herokuapp.com/api
 
 ## Summary
 
@@ -23,7 +25,7 @@ To run this app locally, you must ensure your node version is 17.7.1 or higher.
 
 ## How to run this app locally
 
-To deploy this app locally (using Ubuntu), you should:
+To deploy this app locally (using Ubuntu), you should  take the following steps:
 
 1. Clone repo in terminal:
 ```js
