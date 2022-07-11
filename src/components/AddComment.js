@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { postComment } from "../utils/api";
 import "../styles/addComments.css";
 
-const AddComment = ({ review_id }) => {
+const AddComment = ({ review_id, setAllComments, allComments, comment_count }) => {
+
   const [commentBody, setCommentBody] = useState("");
+  //posted changes to true when a comment is submitted, and then fires to the backend.
   const [posted, setPosted] = useState(false);
+  //submiteOnce disabled submit button once a comment is added, preventing spam.
   const [submitOnce, setSubmitOnce] = useState(false);
 
   const handleSubmitComment = (event) => {
@@ -19,19 +22,30 @@ const AddComment = ({ review_id }) => {
       username: "grumpy19",
     };
 
+    let today = new Date().toISOString();
+
     if (posted) {
-      postComment(review_id, commentToAdd)
-        .then(() => {
-          alert("Comment successfully added! Refresh to see your comment");
-        })
-        .then(() => {
-          setCommentBody("");
-        })
-        .catch((err) => {
-          console.log(err, "Error <<<<<<<");
-        });
+      let currComments = [
+        ...allComments,
+        {
+          body: commentBody,
+          author: "grumpy19",
+          created_at: today,
+          // comment_id: 9999,
+          // review_id: review_id,
+          // votes: 0,
+        },
+      ];
+
+      setAllComments(currComments);
+     
+      postComment(review_id, commentToAdd).catch((err) => {
+        currComments.pop();
+        setAllComments(currComments)
+        alert("Sorry, something went wrong, please try posting your comment again!")
+      });
     }
-  }, [posted, review_id]);
+  }, [review_id, posted]);
 
   return (
     <div className="AddComment__whole">
