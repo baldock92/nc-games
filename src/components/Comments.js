@@ -26,7 +26,11 @@ const Comments = ({ review_id }) => {
 
   return (
     <div>
-      <AddComment review_id={review_id} setAllComments={setAllComments} allComments={allComments}/>
+      <AddComment
+        review_id={review_id}
+        setAllComments={setAllComments}
+        allComments={allComments}
+      />
       <ul className="comments__all">
         {moreComments === false ? (
           <>

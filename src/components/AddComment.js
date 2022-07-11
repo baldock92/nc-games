@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { postComment } from "../utils/api";
 import "../styles/addComments.css";
 
-const AddComment = ({ review_id, setAllComments, allComments }) => {
+const AddComment = ({ review_id, setAllComments, allComments, comment_count }) => {
+
   const [commentBody, setCommentBody] = useState("");
   //posted changes to true when a comment is submitted, and then fires to the backend.
   const [posted, setPosted] = useState(false);
@@ -30,15 +31,18 @@ const AddComment = ({ review_id, setAllComments, allComments }) => {
           body: commentBody,
           author: "grumpy19",
           created_at: today,
-          comment_id: 9999,
-          review_id: review_id,
-          votes: 0,
+          // comment_id: 9999,
+          // review_id: review_id,
+          // votes: 0,
         },
       ];
 
       setAllComments(currComments);
+     
       postComment(review_id, commentToAdd).catch((err) => {
-        console.log(err, "Error <<<<<<<");
+        currComments.pop();
+        setAllComments(currComments)
+        alert("Sorry, something went wrong, please try posting your comment again!")
       });
     }
   }, [review_id, posted]);
