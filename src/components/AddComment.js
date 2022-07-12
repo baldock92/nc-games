@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { postComment } from "../utils/api";
 import "../styles/addComments.css";
 
-const AddComment = ({ review_id, setAllComments, allComments, comment_count }) => {
+const AddComment = ({ review_id, setAllComments, allComments  }) => {
 
   const [commentBody, setCommentBody] = useState("");
   //posted changes to true when a comment is submitted, and then fires to the backend.
@@ -15,12 +15,12 @@ const AddComment = ({ review_id, setAllComments, allComments, comment_count }) =
     setPosted(true);
     setSubmitOnce(true);
   };
-
-  useEffect(() => {
-    const commentToAdd = {
+ const commentToAdd = {
       body: commentBody,
       username: "grumpy19",
     };
+  useEffect(() => {
+   
 
     let today = new Date().toISOString();
 
@@ -31,9 +31,6 @@ const AddComment = ({ review_id, setAllComments, allComments, comment_count }) =
           body: commentBody,
           author: "grumpy19",
           created_at: today,
-          // comment_id: 9999,
-          // review_id: review_id,
-          // votes: 0,
         },
       ];
 
@@ -49,7 +46,8 @@ const AddComment = ({ review_id, setAllComments, allComments, comment_count }) =
 
   return (
     <div className="AddComment__whole">
-      <h3>Write a comment below 😊</h3>
+      {posted? <h2>Thanks for submitting your comment, {commentToAdd.username}!</h2> : <h3>Write a comment below 😊</h3>}
+      
       <form className="AddComment__form" onSubmit={handleSubmitComment}>
         <textarea
           className="AddComment__input"
