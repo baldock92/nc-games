@@ -25,14 +25,6 @@ const Delete = ({ comment }) => {
 
   return (
     <div>
-      <button
-        className="Comments__delete-button"
-        onClick={() => {
-          setConfirmDelete(true);
-        }}
-      >
-        Delete comment
-      </button>
       {confirmDelete ? (
         <>
           <p>Are you sure you want to delete?</p>
@@ -52,6 +44,14 @@ const Delete = ({ comment }) => {
           </div>
         </>
       ) : null}
+      <button
+        className="Comments__delete-button"
+        onClick={() => {
+          setConfirmDelete(true);
+        }}
+      >
+        Delete comment
+      </button>
     </div>
   );
 };
