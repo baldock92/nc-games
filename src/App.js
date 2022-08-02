@@ -1,6 +1,7 @@
 import "./styles/App.css";
 
 import Header from "./components/Header";
+// import Login from "./components/Login"
 import Navbar from "./components/Navbar";
 import Reviews from "./components/Reviews";
 import Categories from "./components/Categories";
@@ -18,6 +19,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews/:category" element={<Reviews />} />

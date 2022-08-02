@@ -45,12 +45,13 @@ const Reviews = () => {
                 src={review.review_img_url}
                 alt="board game"
               />
-
-              <div className="review__title"> {review.title}</div>
-              <div className="review__category">
-                Category: {review.category}
+              <div className="review__content">
+                <div className="review__title"> {review.title}</div>
+                <div className="review__category">
+                  Category: {review.category}
+                </div>
+                <div className="review__id">Review ID: {review.review_id}</div>
               </div>
-              <div className="review__id">Review ID: {review.review_id}</div>
             </div>
           </Link>
         );
