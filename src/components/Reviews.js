@@ -50,7 +50,7 @@ const Reviews = () => {
                 <div className="review__category">
                   Category: {review.category}
                 </div>
-                <div className="review__id">Review ID: {review.review_id}</div>
+                <div className="review__id">Review ID: <span className="review__id-number">{review.review_id}</span></div>
               </div>
             </div>
           </Link>
