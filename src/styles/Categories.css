@@ -39,7 +39,7 @@
   }  
   
   .dropdown-content {
-    display: none;
+    display:none;
     position: absolute;
     left: 0;
     background-color: #4cafa2bb;
@@ -53,7 +53,7 @@
     color: black;
     padding: 12px 0px;
     text-decoration: none;
-    display: block;
+    display:block;
   }
   
   .dropdown-content li:hover {

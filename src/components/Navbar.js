@@ -13,6 +13,11 @@ const linkStyle = {
 const Navbar = () => {
   const [allCategories, setAllCategories] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [displayDropdown, setDisplayDropdown] = useState("none")
+
+  const handleDropdownClick = () => {
+    displayDropdown === "block"? setDisplayDropdown("none") : setDisplayDropdown("block")
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -29,18 +34,18 @@ const Navbar = () => {
   return (
     <div className="navbar__wrapper">
       <Link to="/">
-        <input type="button" className="navbar__button" value="Home" />
+        <input type="button" className="navbar__button" value="Home" onClick={handleDropdownClick}/>
       </Link>
       <Link to="/reviews">
-        <input type="button" className="navbar__button" value="Reviews" />
+        <input type="button" className="navbar__button" value="Reviews" onClick={handleDropdownClick}/>
       </Link>
       <span className="dropdown">
       <input id="check01" type="checkbox" name="menu" />
-        <label className="navbar__button" htmlFor="check01">Categories</label>
-        <ul className="dropdown-content">
+        <label onClick={handleDropdownClick} className="navbar__button" htmlFor="check01">Categories</label>
+        <ul className="dropdown-content" style={{"display": displayDropdown}}>
           {allCategories.map((category) => {
             return (
-              <li key={category.slug}>
+              <li key={category.slug} onClick={handleDropdownClick}>
                 <label htmlFor="check01">
                   <Link style={linkStyle} to={`/reviews/${category.slug}`}>
                     {category.slug}
@@ -50,9 +55,9 @@ const Navbar = () => {
             );
           })}
         </ul>
-        <Link to="/categories">
+        {/* <Link to="/categories">
           <input type="button" className="navbar__button" value="Categories" />
-        </Link>
+        </Link> */}
       </span>
     </div>
   );

@@ -4,6 +4,30 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+}
+
+.navbar__button {
+  margin: 5% 0%;
+  background-color: #4cafa2;
+  color: #fff;
+  border: black solid 1px;
+  padding: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.7rem;
+  text-align: center;
+  box-shadow: 0 0 0.5rem 0px #4cafa2;
+}
+
+
+@media only screen and (min-width: 650px) {
+.navbar__wrapper{
+  margin-top:0.2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
   padding: 0.5% 20% 0.5%;
 }
 
@@ -24,4 +48,7 @@
   background-color: #ecf01ae3;
   box-shadow: 0 0 0.6rem #c2c525d0;
   color: black;
+}
+
+
 }
