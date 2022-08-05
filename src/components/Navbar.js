@@ -34,10 +34,10 @@ const Navbar = () => {
   return (
     <div className="navbar__wrapper">
       <Link to="/">
-        <input type="button" className="navbar__button" value="Home" onClick={handleDropdownClick}/>
+        <input type="button" className="navbar__button" value="Home" onClick={(() => {setDisplayDropdown("none")})}/>
       </Link>
       <Link to="/reviews">
-        <input type="button" className="navbar__button" value="Reviews" onClick={handleDropdownClick}/>
+        <input type="button" className="navbar__button" value="Reviews" onClick={(() => {setDisplayDropdown("none")})}/>
       </Link>
       <span className="dropdown">
       <input id="check01" type="checkbox" name="menu" />
