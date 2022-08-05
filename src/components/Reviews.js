@@ -39,7 +39,7 @@ const Reviews = () => {
       {allReviews.map((review) => {
         return (
          
-            <div className="review__card"> <Link to={`/singlereview/${review.review_id}`} key={review.review_id}>
+            <div className="review__card"> <Link style={{textDecoration: "none"}} to={`/singlereview/${review.review_id}`} key={review.review_id}>
               <img
                 className="review__image"
                 src={review.review_img_url}

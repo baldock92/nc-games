@@ -1,3 +1,12 @@
+.navbar__wrapper{
+  margin-top:0.2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  padding: 0.5% 20% 0.5%;
+}
+
 .navbar__button {
   margin: 2% 5%;
   background-color: #4cafa2;
@@ -9,4 +18,10 @@
   font-weight: bold;
   font-size: 1rem;
   text-align: center;
+}
+
+.navbar__button:hover{
+  background-color: #ecf01ae3;
+  box-shadow: 0 0 0.6rem #c2c525d0;
+  color: black;
 }
