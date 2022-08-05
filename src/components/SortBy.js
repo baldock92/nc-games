@@ -32,33 +32,35 @@ const SortBy = ({ setAllReviews, allReviews }) => {
     }
   };
   return (
-    <div className="reviews__sortButtonWrapper">
-      <h5>Sort by:</h5>
-      <button
-        className="reviews__sortButton"
-        onClick={() => {
-          handleSortClick("created_at");
-        }}
-      >
-        Date
-      </button>
-      <button
-        className="reviews__sortButton"
-        onClick={() => {
-          handleSortClick("comment_count");
-        }}
-      >
-        Comment count
-      </button>
-      <button
-        className="reviews__sortButton"
-        onClick={() => {
-          handleSortClick("votes");
-        }}
-      >
-        Votes
-      </button>
-    </div>
+    <>
+      <h5 className="sort__header">Sort reviews by:</h5>
+      <div className="reviews__sortButtonWrapper">
+        <button
+          className="reviews__sortButton"
+          onClick={() => {
+            handleSortClick("created_at");
+          }}
+        >
+          Date
+        </button>
+        <button
+          className="reviews__sortButton"
+          onClick={() => {
+            handleSortClick("comment_count");
+          }}
+        >
+          Comment count
+        </button>
+        <button
+          className="reviews__sortButton"
+          onClick={() => {
+            handleSortClick("votes");
+          }}
+        >
+          Votes
+        </button>
+      </div>
+    </>
   );
 };
 

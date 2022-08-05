@@ -38,8 +38,8 @@ const Reviews = () => {
       <SortBy setAllReviews={setAllReviews} allReviews={allReviews} />
       {allReviews.map((review) => {
         return (
-          <Link to={`/singlereview/${review.review_id}`} key={review.review_id}>
-            <div className="review__card">
+         
+            <div className="review__card"> <Link to={`/singlereview/${review.review_id}`} key={review.review_id}>
               <img
                 className="review__image"
                 src={review.review_img_url}
@@ -50,10 +50,10 @@ const Reviews = () => {
                 <div className="review__category">
                   Category: {review.category}
                 </div>
-                <div className="review__id">Review ID: {review.review_id}</div>
-              </div>
+                <div className="review__id">Review ID: <span className="review__id-number">{review.review_id}</span></div>
+              </div></Link>
             </div>
-          </Link>
+          
         );
       })}
     </div>
