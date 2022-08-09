@@ -82,6 +82,23 @@
   box-shadow: 0 0 0.8rem 0px darkblue;
 }
 
+.spinner {
+  width: 10rem;
+  height: 10rem;
+  position: fixed;
+  top: 20%;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%,#474bff);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+  to {
+     transform: rotate(1turn);
+  }
+}
+
 @media only screen and (min-width: 650px) {
   .reviews__all {
     display: flex;
@@ -174,4 +191,21 @@
     background-color: yellow;
     box-shadow: 0 0 0.8rem 0px #4cafa2;
   }
+  .spinner {
+  width: 20rem;
+  height: 20rem;
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%,#474bff);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
+  animation: spinner-zp9dbg 1s infinite linear;
+}
+
+@keyframes spinner-zp9dbg {
+  to {
+     transform: rotate(1turn);
+  }
+}
 }

@@ -30,7 +30,7 @@ const Reviews = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="spinner"></div>;
   }
 
   return (
