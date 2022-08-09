@@ -1,6 +1,7 @@
 import "../styles/Home.css"
 
 const Home = () => {
+  
   return (
     <>
       <h2 className="Home__header">Home page</h2>
