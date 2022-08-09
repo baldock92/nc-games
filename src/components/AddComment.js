@@ -46,7 +46,7 @@ const AddComment = ({ review_id, setAllComments, allComments  }) => {
 
   return (
     <div className="AddComment__whole">
-      {posted? <h2>Thanks for submitting your comment, {commentToAdd.username}!</h2> : <h3>Write a comment below 😊</h3>}
+      {posted? <h2>Thanks for submitting your comment, {commentToAdd.username}!</h2> : null}
       
       <form className="AddComment__form" onSubmit={handleSubmitComment}>
         <textarea
@@ -56,6 +56,7 @@ const AddComment = ({ review_id, setAllComments, allComments  }) => {
           type="text"
           minLength={10}
           maxLength={200}
+          placeholder="Add your comment here..."
           required
           onChange={(event) => {
             setCommentBody(event.target.value);

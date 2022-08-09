@@ -1,16 +1,15 @@
 @media only screen and (min-width: 650px) {
 
 .singleReview__title{
-    font-size: 3.1rem;
+    font-size: 2.3rem;
     font-weight: bold;
-    margin: 0rem 1rem; 
+    /* margin: 0rem 1rem;  */
     padding: 0.3rem;
 }
 .singleReview__category{
-    font-size: 2.3rem;
-    font-weight: bold;
-    margin: 1rem;  
-    padding-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold; 
+    padding: 0.3rem;
 }
 
 .top__review{
@@ -63,12 +62,13 @@
 }
 
 li {
-    margin: 1rem 2rem;
+    /* margin: 0.5rem ; */
+    padding: 0.5rem; 
 }
 
-.singleReview__comments{
+/* .singleReview__comments{
     text-decoration: underline;
-}
+} */
 
 .singleReview__body{
     line-height: 1.3rem;

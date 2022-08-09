@@ -21,16 +21,12 @@ const Comments = ({ review_id }) => {
   }, [review_id, allComments]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div class="spinner"></div>;
   }
 
   return (
     <div>
-      <AddComment
-        review_id={review_id}
-        setAllComments={setAllComments}
-        allComments={allComments}
-      />
+      
       <ul className="comments__all">
         {moreComments === false ? (
           <>
@@ -39,7 +35,7 @@ const Comments = ({ review_id }) => {
               id="comments__expandButton"
               onClick={handleMoreCommentClick}
             >
-              Show comments ➕
+              Show comments
             </button>
           </>
         ) : (
@@ -49,7 +45,7 @@ const Comments = ({ review_id }) => {
               id="comments__hideButton"
               onClick={handleMoreCommentClick}
             >
-              Hide comments ➖
+              Hide comments
             </button>
             {allComments.map((comment) => {
               return (
@@ -57,12 +53,12 @@ const Comments = ({ review_id }) => {
                   <li className="comment__author">Author: {comment.author}</li>
                   <li className="comment__body">"{comment.body}"</li>
 
-                  <li className="comment__created_at">
+                  <li className="comment__created__at">
                     Date: {comment.created_at.slice(0, 10)}
                     <br />
                     Time: {comment.created_at.slice(11, 19)}
                   </li>
-                  <div>
+                  <div className="delete__button">
                     <Delete comment={comment} />
                   </div>
                 </div>
@@ -71,6 +67,11 @@ const Comments = ({ review_id }) => {
           </>
         )}
       </ul>
+      <AddComment
+        review_id={review_id}
+        setAllComments={setAllComments}
+        allComments={allComments}
+      />
     </div>
   );
 };

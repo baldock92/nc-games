@@ -77,14 +77,14 @@ const SingleReview = () => {
             review_id={review.review_id}
             setReview={setReview}
           />
+          <li className="singleReview__comments">
+        Total comments: {review.comment_count}
+      </li>
         </div>
       </div>
-
-      <br />
-
-      <li className="singleReview__comments">
-        Comments: {review.comment_count}
-      </li>
+      {/* <li className="singleReview__comments">
+        Total comments: {review.comment_count}
+      </li> */}
       <Comments review_id={review.review_id} />
     </div>
   );

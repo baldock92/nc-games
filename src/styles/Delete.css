@@ -1,22 +1,41 @@
 .Comments__delete-button {
     background-color: red;
     color: white;
-    margin: 2% 5%;
+    margin: 0.7% 0;
     padding: 0.5rem;
     font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .Comments__delete-button:hover{
     cursor: pointer;
+    background-color: black;
+    color: white;
   }
   
   .Delete__yesButton {
     background-color: #40af44;
-    margin: 2%;
-    padding: 2%;
-    cursor: pointer;
+    margin: 1% 2%;
+    padding: 0.8%;
+    
+    color: white;
+  }
+
+  .Delete__yesButton:hover {
+    background-color: yellow;
+    margin: 1% 2%;
+    padding: 0.8%;
+    cursor:pointer;
   }
   
   .Delete__noButton {
     background-color: white;
-    margin: 2%;
-    padding: 2%;
-    cursor: pointer;
+    margin: 1% 2%;
+    padding: 0.8%;
+  }
+  .Delete__noButton:hover {
+    background-color: yellow;
+    margin: 1% 2%;
+    padding: 0.8%;
+    cursor:pointer;
   }

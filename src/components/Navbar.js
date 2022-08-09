@@ -33,6 +33,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar__wrapper">
+      <h1>NC games - Board game reviews</h1>
       <Link to="/">
         <input type="button" className="navbar__button" value="Home" onClick={(() => {setDisplayDropdown("none")})}/>
       </Link>

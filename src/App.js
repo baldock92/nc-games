@@ -1,6 +1,6 @@
 import "./styles/App.css";
 
-import Header from "./components/Header";
+// import Header from "./components/Header";
 // import Login from "./components/Login"
 import Navbar from "./components/Navbar";
 import Reviews from "./components/Reviews";
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <div className="banner-top">
-        <Header />
+        {/* <Header /> */}
         <Navbar />
       </div>
       <Routes>
