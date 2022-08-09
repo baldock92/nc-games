@@ -1,24 +1,69 @@
 .upvote__button {
   background-color: #40af44;
   border: black 1px solid;
-  color: white;
-  padding: 3%;
+  border-radius: 50%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 1rem;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.upvote__button:hover {
+  background-color: pink;
+  cursor: pointer;
+  border: black 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2.2rem;
+  /* margin: 0 0.4rem 0 0; */
+  margin-right: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 3.8rem;
+  width: 3.8rem;
+}
+
+.downvote__button:hover {
+  background-color: pink;
+  cursor: pointer;
+  border: black 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-right: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 3.8rem;
+  width: 3.8rem;
+}
+
+.upvote__button:disabled:hover {
+  background-color: rgba(165, 37, 37, 0.466);
+  cursor: none;
+}
+
+.downvote__button:disabled:hover {
+  background-color: rgba(165, 37, 37, 0.466);
+  cursor: none;
 }
 
 .downvote__button {
-  background-color: #f50a0a; 
+  background-color: #f50a0a;
   border: black 1px solid;
-  color: white;
-  padding: 3%;
+  border-radius: 50%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 1rem;
+  height: 3.2rem;
+  width: 3.2rem;
 }
 
 :disabled {
-    background-color: rgba(165, 37, 37, 0.466);
-  }
-  
+  background-color: rgba(165, 37, 37, 0.466);
+}
+
+.vote__count {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

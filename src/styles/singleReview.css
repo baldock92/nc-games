@@ -1,29 +1,87 @@
+@media only screen and (min-width: 650px) {
+
 .singleReview__title{
-    font-size: 1.5rem;
+    font-size: 3.1rem;
     font-weight: bold;
-    margin: 1rem 2rem;
-    background-color: #4cafa2a8;
-    padding: 0.5rem 0rem;
+    margin: 0rem 1rem; 
+    padding: 0.3rem;
 }
 .singleReview__category{
-    font-size: 1 rem;
+    font-size: 2.3rem;
     font-weight: bold;
-    margin: 1rem;
+    margin: 1rem;  
+    padding-bottom: 20px;
+}
+
+.top__review{
+    background-color: #4cafa2a8;
+    opacity: 0.96;
+    color: white;
+    padding-bottom: 3px;
+    margin-bottom: 0.7rem;
+}
+
+.review__contents{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 97%;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+.contents__container{
+    max-width: 55%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    background-color: #393d71;
+    opacity: 0.96;
+    border-radius: 1%;
+    color: white;
+}
+
+.image__container{
+    max-width: 100%;
+    max-height: auto;
 }
 
 .singleReview__image{
-    max-height: auto;
-    max-width: 30%;
+    width: 50%;
+    height: auto;
+    border-radius: 3%;
 }
 
 .singleReview__author{
     text-decoration: underline;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
 }
 
 li {
     margin: 1rem 2rem;
-}.singleReview__comments{
+}
+
+.singleReview__comments{
     text-decoration: underline;
+}
+
+.singleReview__body{
+    line-height: 1.3rem;
+    font-size: 1rem;
+}
+
+.singleReview__createdAt{
+    font-size: 1.1rem ;
+}
+
+.time__date{
+    font-weight: bolder;
+    margin: 1%;
 }
 
 .spinner {
@@ -41,4 +99,12 @@ li {
     to {
        transform: rotate(1turn);
     }
+  }
+
+ 
+
+
+
+
+
   }
