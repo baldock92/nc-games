@@ -22,6 +22,7 @@ const Home = () => {
       setUser(data);
       setLoggedIn(true);
     }
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
