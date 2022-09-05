@@ -1,5 +1,5 @@
 import "../styles/Home.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 
 const Home = () => {
@@ -13,14 +13,24 @@ const Home = () => {
 
   const handleLogoutClick = () => {
     setLoggedIn(false);
-    setUser("")
-  }
+    setUser("");
+  };
+
+  useEffect(() => {
+    const data = localStorage.getItem("username");
+    if (data) {
+      setUser(data);
+      setLoggedIn(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("username", user);
+  });
 
   return (
     <>
-      <h3 className="Home__title">
-        Welcome to my board games review app!
-      </h3>
+      <h3 className="Home__title">Welcome to my board games review app!</h3>
       <br />
       {loggedIn ? (
         <div>
