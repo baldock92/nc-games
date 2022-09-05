@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { postComment } from "../utils/api";
 import "../styles/addComments.css";
+import { UserContext } from "../contexts/UserContext";
 
 const AddComment = ({ review_id, setAllComments, allComments  }) => {
+  const {user} = useContext(UserContext)
+
 
   const [commentBody, setCommentBody] = useState("");
   //posted changes to true when a comment is submitted, and then fires to the backend.
@@ -17,7 +20,7 @@ const AddComment = ({ review_id, setAllComments, allComments  }) => {
   };
  const commentToAdd = {
       body: commentBody,
-      username: "grumpy19",
+      username: user,
     };
   useEffect(() => {
    
@@ -29,7 +32,7 @@ const AddComment = ({ review_id, setAllComments, allComments  }) => {
         ...allComments,
         {
           body: commentBody,
-          author: "grumpy19",
+          author: user,
           created_at: today,
         },
       ];

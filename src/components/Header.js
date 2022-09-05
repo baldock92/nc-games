@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 
 const Header = () => {
-  const {user, setUser} = useContext(UserContext)
+  const {user} = useContext(UserContext)
 
   return (
     <div className="header__wrapper">

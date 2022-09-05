@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { deleteComment } from "../utils/api";
 import "../styles/Delete.css";
+import { UserContext } from "../contexts/UserContext";
 
 const Delete = ({ comment }) => {
+  const {user} = useContext(UserContext)
+
   const [confirmDelete, setConfirmDelete] = useState(false);
 
-  let loggedInUser = "grumpy19";
+  // let loggedInUser = user;
 
   const handleDeleteClick = () => {
-    if (loggedInUser === comment.author) {
+    if (user === comment.author) {
       deleteComment(comment.comment_id)
         .then((statusCode) => {
           if (statusCode === 204) {

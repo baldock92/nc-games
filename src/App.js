@@ -1,7 +1,6 @@
 import "./styles/App.css";
 import { useState } from "react";
 import Header from "./components/Header";
-// import Login from "./components/Login"
 import Navbar from "./components/Navbar";
 import Reviews from "./components/Reviews";
 import Categories from "./components/Categories";
