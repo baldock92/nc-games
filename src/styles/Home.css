@@ -19,3 +19,43 @@
   background-color: #dfe21bd0;
   padding: 3px;
 }
+
+.users__all{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.users__individual{
+ font-weight: bolder;
+ margin: 0.5rem;
+ border-radius: 5%;
+}
+
+.users__individual > img{
+  width: 15%;
+  height: auto;
+  max-width: 8rem;
+  cursor: pointer
+}
+
+.users__individual:hover{
+  box-shadow: 0 0 10px black;
+}
+
+h4{
+  margin-bottom: 1rem;
+}
+
+.logout__button{
+  cursor: pointer;
+  padding: 1%;
+  font-weight: bolder;
+  background-color: white;
+}
+
+.logout__button:hover{
+  background-color: red;
+  color: white;
+}
