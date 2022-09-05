@@ -1,10 +1,14 @@
-// import { Link } from "react-router-dom";
+import "../styles/Header.css"
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 const Header = () => {
+  const {user} = useContext(UserContext)
+
   return (
-    <div>
+    <div className="header__wrapper">
       <h1>NC games review</h1>
-      {/* <Link to={"/login"} className="login__link">Log in</Link> */}
+      {user? <h5>Logged in as : {user}</h5> : null}
     </div>
   );
 };
