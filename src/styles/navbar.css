@@ -20,6 +20,11 @@
   box-shadow: 0 0 0.5rem 0px #4cafa2;
 }
 
+.navbar__button:hover{
+  background-color: yellow;
+  color: black;
+}
+
 .spinner {
   width: 10rem;
   height: 10rem;

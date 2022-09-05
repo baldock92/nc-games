@@ -11,6 +11,9 @@
   max-height: 50%;
   margin: 2% 10%;
 }
+.review__card:hover {
+  box-shadow: 0 0 1.5rem 5px pink
+}
 
 .review__image {
   width: 100%;
@@ -80,6 +83,11 @@
   text-align: center;
   background-color: rgb(183, 126, 236);
   box-shadow: 0 0 0.8rem 0px darkblue;
+}
+
+.reviews__sortButton:hover{
+  background-color: yellow;
+  color: black;
 }
 
 .spinner {
